@@ -21,7 +21,9 @@ const Board = (() => {
   }
 
   function resize() {
+    if (!canvas) return;
     const wrapper = canvas.parentElement;
+    if (!wrapper) return;
     const s = Math.min(wrapper.clientWidth - 16, wrapper.clientHeight - 16, 360);
     canvas.style.width  = s + 'px';
     canvas.style.height = s + 'px';
